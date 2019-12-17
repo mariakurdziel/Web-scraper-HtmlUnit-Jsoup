@@ -1,3 +1,7 @@
+package otomoto;
+
+import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+
 import java.io.IOException;
 
 public class MainClass {

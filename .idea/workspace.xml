@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd4bb62e-bf0c-44c1-8c76-1cf69b8ca8c0" name="Default Changelist" comment="" />
+    <list default="true" id="bd4bb62e-bf0c-44c1-8c76-1cf69b8ca8c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/articles.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/1zbnCzmfBT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/65-latek-ofiara-nocnego-pozaru-domu-w-klasku.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/J6WMSWqj6m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/MTfk9kqTURBXy84ZDYxYzMyMjczMDk2Y2Y5ZDFkNDI3YTQ0MjYyZmI0ZC5qcGVnkZUDAADNAyBkgaEwAQ" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/abp-stanislaw-gadecki.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/adam-bodnar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/aleksandra-pomorska.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/andrzej-duda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/angela-merkel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/bartosz-arlukowicz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/boeing-737-max.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/bogdan-swieczkowski.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/boris-johnson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/boze-cialo-kadr-z-filmu-rez-jan-komasa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/bp-romuald-kaminski.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/donald-tusk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/greenwashing-wg-pge-fot-pge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/ile-polacy-wydaja-miesiecznie-srednio-na-alkohol-sondaz-cbos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/joanna-mucha.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/kajaki-na-wyspie-phuket-tajlandia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/marian-banas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/mata-patointeligencja.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/morawiecki-w-38-rocznice-pacyfikacji-kopalni-wujek.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/nieoficjalnie-polska-przegrywa-w-ue-walke-o-zasady-finansowania-zielonych-inwestycji.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/oeh3TN42v3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/papiez-franciszek.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/pociag-pendolino.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/podejrzany-z-kolobrzegu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/policja.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/polscy-marynarze-zwolnieni-z-podatku.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/premiera-kolejnego-odcinka-serialu-czarna-domena-dzis-o-2230-w-canal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/protest-bylych-pracownikow-sluzb-mundurowych-w-sprawie-zawieszania-postepowan-odwolawczych-od-decyzji-emerytalno-rentowych-listopad-2019.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/robert-wojtowicz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/rower-miejski.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/sad-apelacyjny-w-poznaniu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/tLGRS4QCS5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/wypadek-prywatnego-smiglowca-w-domecku-kolo-opola.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/wyrok-sadu-we-wroclawiu-ma-nie-tylko-przelomowa-tresc-ale-takze-bardzo-precyzyjne-i-logiczne-uzasadnienie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/wyzsza-szkola-policji-w-szczytnie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/zbigniew-s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/onet/images/zdjecie-ilustracyjne.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/onet/Article.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/onet/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/otomoto/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/otomoto/Annoucement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/otomoto/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/otomoto/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/otomoto/Annoucement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MainClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WebScraper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/otomoto/WebScraper.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +70,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -26,14 +85,17 @@
     </option>
   </component>
   <component name="ProjectId" id="1TfddSHfwz3QakAAz5puKbYToEe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,16 +109,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainClass">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="onet.Main" />
+      <module name="ws" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainClass" />
+      <option name="MAIN_CLASS_NAME" value="otomoto.MainClass" />
       <module name="ws" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="WebScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WebScraper" />
+      <option name="MAIN_CLASS_NAME" value="otomoto.WebScraper" />
       <module name="ws" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.WebScraper" />
       </list>
@@ -79,7 +155,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573855171033</updated>
+      <workItem from="1574695715545" duration="490000" />
+      <workItem from="1574696442192" duration="59000" />
+      <workItem from="1574768377012" duration="1203000" />
+      <workItem from="1575059717290" duration="245000" />
+      <workItem from="1575060030789" duration="22000" />
+      <workItem from="1575126948382" duration="622000" />
+      <workItem from="1576339457957" duration="3358000" />
+      <workItem from="1576358485759" duration="11991000" />
+      <workItem from="1576413966571" duration="233000" />
+      <workItem from="1576418884689" duration="5845000" />
+      <workItem from="1576440087282" duration="5792000" />
+      <workItem from="1576535979245" duration="8541000" />
     </task>
+    <task id="LOCAL-00001" summary="Part of my thesis - web scraper in HtmlUnit + Jsoup">
+      <created>1574695810107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574695810107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Part of my thesis - web scraper in HtmlUnit + Jsoup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part of my thesis - web scraper in HtmlUnit + Jsoup" />
   </component>
 </project>

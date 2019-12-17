@@ -1,4 +1,6 @@
-public class Article {
+package otomoto;
+
+public class Annoucement {
     public String modelName;
     public String productionYear;
     public String mileage;
@@ -8,7 +10,7 @@ public class Article {
     public String city;
     public String region;
 
-    public Article( String modelName, String productionYear, String mileage, String engineCapacity, String price, String currency, String city, String region) {
+    public Annoucement( String modelName, String productionYear, String mileage, String engineCapacity, String price, String currency, String city, String region) {
         this.modelName = modelName;
         this.productionYear = productionYear;
         this.mileage = mileage;

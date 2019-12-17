@@ -1,3 +1,5 @@
+package otomoto;
+
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import com.opencsv.CSVWriter;
@@ -5,6 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import otomoto.Annoucement;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -20,7 +23,7 @@ public class WebScraper {
     private String startUrl;
     private String baseUrl;
     private List<String> pageUrls = new ArrayList<String>();
-    private List<Article> articles = new ArrayList<Article>();
+    private List<Annoucement> articles = new ArrayList<Annoucement>();
 
     public WebScraper(String startUrl) {
         this.startUrl  = startUrl;
@@ -43,7 +46,7 @@ public class WebScraper {
             String[] headerRecord = {"Model Name", "Production Year", "Mileage", "Engine Capacity", "Price", "Currency", "City", "Region"};
             csvWriter.writeNext(headerRecord);
 
-            for (Article a: this.articles) {
+            for (Annoucement a: this.articles) {
                 csvWriter.writeNext(new String[]{ a.modelName, a.productionYear, a.mileage, a.engineCapacity, a.price, a.currency, a.city, a.region});
             }
         }
@@ -61,7 +64,7 @@ public class WebScraper {
         String currency = doc.getElementsByClass("offer-price__currency ds-price-currency").get(0).text();
         String city = doc.getElementsByClass("ds-location-city").get(0).text();
         String region = doc.getElementsByClass("ds-location-region").get(0).text();
-        this.articles.add(new Article(modelName, productionYear, mileage, engineCapacity, price, currency, city, region));
+        this.articles.add(new Annoucement(modelName, productionYear, mileage, engineCapacity, price, currency, city, region));
     }
 
     private void parsePage() throws IOException {
