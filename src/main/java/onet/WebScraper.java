@@ -10,7 +10,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import otomoto.Annoucement;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,12 +20,22 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import static java.lang.Thread.sleep;
 
-public class Main {
+public class WebScraper {
 
-    private static void writeToCsv(List <Article> articles) throws IOException {
+    private List <Article> articles = new ArrayList<>();
+    private WebDriver driver;
+
+    public WebScraper(String startUrl) {
+        System.setProperty("webdriver.chrome.driver","C:/chromedriver.exe");
+        this.driver = new ChromeDriver();
+        driver.get(startUrl);
+    }
+
+    private void writeToCsv() throws IOException {
         String filePath = "articles.csv";
         Writer writer = Files.newBufferedWriter(Paths.get(filePath), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 
@@ -45,16 +54,15 @@ public class Main {
         }
     }
 
-    public static void scrapeImage(String url, String name) {
+    private void scrapeImage(String url, String name) {
         try(InputStream in = new URL("http:"+url).openStream()){
             Files.copy(in, Paths.get("C:/Users/maria/IdeaProjects/ws/src/main/java/onet/images/"+name));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    public static String generateImageName() {
+    private String generateImageName() {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
         StringBuilder sb = new StringBuilder(10);
 
@@ -65,33 +73,50 @@ public class Main {
         return sb.toString()+".jpg";
     }
 
-    public static String getCategoryUrl(WebDriver driver) {
-        List <WebElement> categories = driver.findElements(By.xpath("//ul[@class='mainMenu']/li/a"));
-        categories.removeIf(item -> item.getText().isEmpty());
-        return categories.get(0).getAttribute("href");
+    private String chooseCategory(String category) {
+        switch(category){
+            case "s":
+                return "SPORT";
+            case "k" :
+                 return "KULTURA";
+            default:
+                return "WIADOMOŚCI";
+        }
     }
 
-    public static List <String> getNewsLinks(WebDriver driver,String url, int limit) throws IOException, InterruptedException {
+    private String getCategoryUrl(String category) {
+        String categoryUrl="";
+        String categoryName = chooseCategory(category);
+        List <WebElement> categories = driver.findElements(By.xpath("//ul[@class='mainMenu']/li/a"));
+        categories.removeIf(item -> item.getText().isEmpty());
+        for(WebElement c: categories) {
+            if(c.getText().equals(categoryName)) {
+                categoryUrl=c.getAttribute("href");
+                break;
+            }
+        }
+        return categoryUrl;
+    }
+
+    private List <String> getNewsLinks(String url, int limit) throws InterruptedException {
         List <WebElement> articles = new ArrayList<>();
         List <String> links = new ArrayList<>();
         driver.get(url);
-           while(articles.size() < limit) {
-               JavascriptExecutor js = (JavascriptExecutor) driver;
-               js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-               sleep(300);
-               articles = driver.findElements(By.xpath("//div[contains(@class, 'items solrList ')]/a"));
+        while(articles.size() < limit) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+            sleep(300);
+            articles = driver.findElements(By.xpath("//div[contains(@class, 'items solrList ')]/a"));
         }
         articles = articles.subList(0,limit);
 
         for(WebElement a: articles) {
-               links.add(a.getAttribute("href"));
+            links.add(a.getAttribute("href"));
         }
-      return links;
+        return links;
     }
 
-    public static List <Article> getArticles(List <String> links, WebDriver driver) {
-        List<Article> articles = new ArrayList<>();
-
+    private List <Article> getArticles(List <String> links) {
         for(String l: links) {
             driver.get(l);
             String page = driver.getPageSource();
@@ -114,26 +139,26 @@ public class Main {
                 if(imageName.equals(".jpg")) {
                     imageName = generateImageName();
                 }
-                //scrapeImage(imgUrl,imageName);
+                scrapeImage(imgUrl,imageName);
             } else {
                 imageName="Not Found";
             }
-            System.out.println(imageName);
             Article a = new Article(title[0],desc,text,imageName);
             articles.add(a);
         }
         return articles;
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-       String startUrl = "https://www.onet.pl/";
-       System.setProperty("webdriver.chrome.driver","C:/chromedriver.exe");
-       WebDriver driver = new ChromeDriver();
-       driver.get(startUrl);
-       String categoryUrl = getCategoryUrl(driver);
-       List <String> newsLinks = getNewsLinks(driver,categoryUrl, 50);
-       List <Article> articles = getArticles(newsLinks, driver);
-       writeToCsv(articles);
+    public void start() throws IOException, InterruptedException {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Wybierz kategorię artykułów: w - wiadomości, k - kultura, s-sport");
+        String category = in.nextLine();
+        System.out.println("Wybierz ilość artykułów");
+        int limit = in.nextInt();
 
+        String categoryUrl = getCategoryUrl(category);
+        List<String> newsLinks = getNewsLinks(categoryUrl, limit);
+        getArticles(newsLinks);
+        writeToCsv();
     }
 }

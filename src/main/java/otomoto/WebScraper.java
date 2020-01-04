@@ -7,7 +7,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import otomoto.Annoucement;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -16,6 +15,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class WebScraper {
 
@@ -77,7 +77,6 @@ public class WebScraper {
             Elements articles  = doc.select("article");
             list_of_articles.addAll(articles);
         }
-
         for (Element article: list_of_articles) {
             parseArticle(article);
         }
@@ -97,27 +96,27 @@ public class WebScraper {
         return new Integer(lastPage.asText());
     }
 
-    private HtmlPage fillForm() throws IOException {
+    private HtmlPage fillForm(String brand, String minPrice, String maxPrice, String minMileage, String maxMileage, String minYear, String maxYear) throws IOException {
         HtmlPage page = this.client.getPage(this.startUrl);
         HtmlAnchor category = page.getFirstByXPath("//ul[@class='category-tabs']/li/a");
         category.click();
         HtmlButton button = page.getFirstByXPath("//*[@id=\"searchmain_29\"]/button[1]");
         HtmlPage search_page = button.click();
         HtmlSelect carBrand = (HtmlSelect) search_page.getElementById("param571");
-        HtmlOption brand_option = carBrand.getOptionByValue("opel");
+        HtmlOption brand_option = carBrand.getOptionByValue(brand);
         carBrand.setSelectedAttribute(brand_option, true);
         HtmlInput priceFrom = search_page.getElementByName("search[filter_float_price:from]");
-        priceFrom.setValueAttribute("2000");
+        priceFrom.setValueAttribute(minPrice);
         HtmlInput priceTo = search_page.getElementByName("search[filter_float_price:to]");
-        priceTo.setValueAttribute("20000");
+        priceTo.setValueAttribute(maxPrice);
         HtmlInput yearFrom = search_page.getElementByName("search[filter_float_year:from]");
-        yearFrom.setValueAttribute("2009");
+        yearFrom.setValueAttribute(minYear);
         HtmlInput yearTo = search_page.getElementByName("search[filter_float_year:to]");
-        yearTo.setValueAttribute("2019");
+        yearTo.setValueAttribute(maxYear);
         HtmlInput mileageFrom = search_page.getElementByName("search[filter_float_mileage:from]");
-        mileageFrom.setValueAttribute("75000");
+        mileageFrom.setValueAttribute(minMileage);
         HtmlInput mileageTo = search_page.getElementByName("search[filter_float_mileage:to]");
-        mileageTo.setValueAttribute("150000");
+        mileageTo.setValueAttribute(maxMileage);
         HtmlSelect fuelType = (HtmlSelect) search_page.getElementById("param581");
         HtmlOption fuel_option = fuelType.getOptionByText("Benzyna");
         fuelType.setSelectedAttribute(fuel_option, true);
@@ -128,7 +127,22 @@ public class WebScraper {
     }
 
     public void start() throws IOException {
-        HtmlPage firstPage = this.fillForm();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Podaj markę samochodu:");
+        String brand = in.nextLine();
+        System.out.println("Podaj minimalną cenę");
+        String minPrice = in.nextLine();
+        System.out.println("Podaj maksymalną cenę:");
+        String maxPrice = in.nextLine();
+        System.out.println("Podaj minimalny przebieg:");
+        String minMileage = in.nextLine();
+        System.out.println("Podaj maksymalny przebieg:");
+        String maxMileage = in.nextLine();
+        System.out.println("Podaj minimalny rok produkcji:");
+        String minYear = in.nextLine();
+        System.out.println("Podaj maksymlany rok produkcji:");
+        String maxYear = in.nextLine();
+        HtmlPage firstPage = this.fillForm(brand, minPrice, maxPrice, minMileage, maxMileage, minYear, maxYear);
         int numberOfPages = extractSiteProperties(firstPage);
         this.initializeListOfUrls(numberOfPages);
         this.parsePage();
